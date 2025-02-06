@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txttitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Confirmation"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/text_heading_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txttitle"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center"
+        android:text="Are you sure you are arrived in a pickup location ?"
+        android:textSize="16sp"
+        android:visibility="visible"/>
+
+
+    <TextView
+        android:id="@+id/txt_error"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_heading_tv"
+        android:layout_margin="20dp"
+        android:textColor="#A81010"
+        android:text="@string/if_gallery_option_didn_t_work_please_use_camera_option_to_upload_documents"
+        android:textSize="14dp"
+        android:visibility="gone"
+
+        />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_error"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:gravity="center"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/cancel_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@+id/text_heading_tv"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:background="@drawable/view_border"
+            android:backgroundTint="#D54B4D"
+
+            android:text="Cancel"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/confirm_btn_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_margin="20dp"
+            android:layout_below="@+id/text_heading_tv"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:layout_toEndOf="@+id/cancel_btn"
+            android:background="@drawable/view_border"
+            android:backgroundTint="#5AC67B"
+
+            android:text="Confirm"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</RelativeLayout>
