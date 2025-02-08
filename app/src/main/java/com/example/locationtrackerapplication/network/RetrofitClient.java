@@ -1,4 +1,5 @@
-package com.example.locationtrackerapplication;
+package com.example.locationtrackerapplication.network;
+
 
 
 import okhttp3.OkHttpClient;
@@ -7,7 +8,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
-    private static final String BASE_URL = "https://backend.orderthali.in";
+    private static final String BASE_URL = NetworkConstants.URL.url;
     private static RetrofitClient instance = null;
     private static RetrofitClient mapinstance = null;
     private static RetrofitClient otpinstance = null;
@@ -33,7 +34,7 @@ public class RetrofitClient {
         myApi = retrofit.create(ApiInterface.class);
     }
 
-    private RetrofitClient(String url, ApiInterface key) {
+    private RetrofitClient(String url,ApiInterface key) {
         OkHttpClient.Builder httpClientBuilder = new OkHttpClient.Builder();
 
         // Add logging interceptor for debugging purposes
@@ -73,5 +74,13 @@ public class RetrofitClient {
         return myApi;
     }
 
+    public ApiInterface getMapapi() {
+        return mapapi;
+    }
+
+    public ApiInterface getOTPapi() {
+        return otpapi;
+    }
 
 }
+
