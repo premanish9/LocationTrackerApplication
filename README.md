@@ -65,7 +65,4 @@ proper code comments.
 Unit Testing: Writing unit test cases will be a plus.
 Submission:
 ●
-●
-Submit your project via Git as a public repository on GitHub or Bitbucket.
-Include a README file with instructions on how to run the project.
-Timeline: 3 days
+
