@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LocationTrackerApplication</string>
+    <string name="app_name">NewsApplication</string>
     <string name="if_gallery_option_didn_t_work_please_use_camera_option_to_upload_documents">If gallery option didn\\\'t work, please use camera option to upload documents.</string>
 
 </resources>

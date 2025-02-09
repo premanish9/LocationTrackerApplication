@@ -33,12 +33,6 @@ class NewsListViewHolder(
 
 
         Glide.with(activity!!).load(itemPaymentType.urlToImage)
-            .apply(
-                RequestOptions.circleCropTransform()
-                    .diskCacheStrategy(DiskCacheStrategy.NONE)
-                    //  .placeholder(R.drawable.ic_user_placeholder)
-                    .skipMemoryCache(true)
-            )
             .into(binding.imgnews)
 
 

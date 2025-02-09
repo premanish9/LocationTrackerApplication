@@ -41,12 +41,6 @@ class NewsViewActivity : AppCompatActivity() {
             mBinding.imgbackicon.setOnClickListener { onBackPressed() }
 
             Glide.with(this!!).load(article.urlToImage)
-                .apply(
-                    RequestOptions.circleCropTransform()
-                        .diskCacheStrategy(DiskCacheStrategy.NONE)
-                        //  .placeholder(R.drawable.ic_user_placeholder)
-                        .skipMemoryCache(true)
-                )
                 .into(mBinding.imgnews)
 
         }

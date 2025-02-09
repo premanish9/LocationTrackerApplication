@@ -9,9 +9,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/baseline_news_24"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/baseline_news_24"
         android:supportsRtl="true"
         android:theme="@style/Theme.LocationTrackerApplication"
         android:usesCleartextTraffic="true"
@@ -29,21 +29,7 @@
             </intent-filter>
         </activity>
 
-        <service
-            android:name=".utils.BackGroundService"
-            android:exported="false"
-            android:foregroundServiceType="location" />
 
-        <receiver
-            android:name=".utils.BootReceiver"
-            android:enabled="true"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </receiver>
     </application>
 
 </manifest>
