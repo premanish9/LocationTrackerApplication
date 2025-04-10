@@ -11,7 +11,7 @@ data class ArticleEntity(
     val sourceName: String,
     val author: String?,
     val title: String,
-    val description: String,
+    val description: String?,
     val url: String,  // Unique constraint
     val urlToImage: String?,
     val publishedAt: String,

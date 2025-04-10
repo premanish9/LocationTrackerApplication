@@ -55,6 +55,8 @@ dependencies {
     implementation(libs.play.services.location)
     implementation(libs.retrofit.gson)
     implementation(libs.retrofit.coroutines.adapter )
+    implementation(libs.lifecycle.viewmodel.ktx)
+
     implementation(libs.androidx.room.runtime)
     kapt(libs.androidx.room.compiler)
     implementation(libs.androidx.room.ktx)

@@ -20,12 +20,17 @@ import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import androidx.lifecycle.viewModelScope
+
 
 class MainActivityViewModel(private val dataSource: AuthDataSource) : ViewModel() {
 
 
     private val _apiNewsResultData= MutableLiveData<AuthResultData>()
     val apiNewsResultData: LiveData<AuthResultData> = _apiNewsResultData
+
+
+
 
 
     private val repository: NewsRepository
@@ -36,23 +41,23 @@ class MainActivityViewModel(private val dataSource: AuthDataSource) : ViewModel(
     }
 
     fun saveArticles(articles: List<ArticleEntity>) {
-        GlobalScope.launch {
+        viewModelScope.launch {
             repository.insertArticles(articles)
         }
     }
 
     fun fetchArticles(onResult: (List<ArticleEntity>) -> Unit) {
-        GlobalScope.launch {
+        viewModelScope.launch {
             val articles = repository.getAllArticles()
             onResult(articles)
         }
     }
 
     fun apicallNews(request: String) {
-        GlobalScope.launch(Dispatchers.Main) {
+        viewModelScope.launch(Dispatchers.IO) {
            // dataSource.getNews(request, responseHandlerRiderRating())
 
-            val call = RetrofitClient.getInstance().myApi.getnews("Apple","2025-02-06","2025-02-06","d13cf6c214994189ae061e5bf06bec47")
+            val call = RetrofitClient.getInstance().myApi.getnews("Apple","2025-04-08","2025-04-08","d13cf6c214994189ae061e5bf06bec47")
             call!!.enqueue(object : Callback<NewsResponse?> {
                 override fun onResponse(
                     call: Call<NewsResponse?>,

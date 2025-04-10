@@ -20,8 +20,10 @@ import com.example.locationtrackerapplication.model.Article
 import com.google.gson.Gson
 import android.content.Intent
 import android.view.View
+import androidx.lifecycle.lifecycleScope
 import com.example.locationtrackerapplication.database.ArticleEntity
 import com.example.locationtrackerapplication.model.Source
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
@@ -47,6 +49,9 @@ class MainActivity : AppCompatActivity() {
 
         mActivityViewModel = ViewModelProvider(this, MainActivityViewModelFactory())
             .get(MainActivityViewModel::class.java)
+
+
+
 
         mActivityViewModel.apiNewsResultData.observe(this,
             Observer {
